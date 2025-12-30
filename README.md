@@ -4,7 +4,6 @@ A Python package for analyzing traffic collisions along roads using GPS sampling
 
 ![Collision Visualization](collision_mile_end.png)
 
-
 ## Features
 
 - **GPS Road Sampling**: Sample GPS locations along roads at regular intervals
@@ -32,7 +31,7 @@ A Python package for analyzing traffic collisions along roads using GPS sampling
 
 ```bash
 # Clone or download the repository
-cd check_collision_places
+cd Collision-data-visualization
 
 # Install required dependencies
 pip install -r requirements.txt
@@ -45,6 +44,32 @@ For fetching road data directly from OpenStreetMap:
 ```bash
 pip install osmnx
 ```
+
+### Collision Data Setup
+
+1. **Download collision data from the DfT website:**
+
+   Download the latest UK road collision data:
+   ```
+   !wget https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-collision-1979-latest-published-year.csv
+   ```
+
+2. **Define the CSV file path:**
+
+   In your code, specify the path to the downloaded collision data:
+   ```python
+   collision_data_path = 'path/to/collision_data.csv'
+   collisions = load_collision_data(collision_data_path)
+   ```
+
+   For example:
+   ```python
+   # If you saved it in your project directory
+   collisions = load_collision_data('dft-road-casualty-statistics-collision-1979-latest-published-year.csv')
+   
+   # Or with a full path
+   collisions = load_collision_data('/home/user/data/dft-road-casualty-statistics-collision-1979-latest-published-year.csv')
+   ```
 
 ## Required Dependencies
 
@@ -65,7 +90,7 @@ osmnx  # For fetching roads from OpenStreetMap
 ## Project Structure
 
 ```
-check_collision_places/
+Collision-data-visualization/
 ├── road_analysis/              # Main package directory
 │   ├── __init__.py            # Package initialization
 │   ├── road_sampler.py        # GPS sampling along roads
