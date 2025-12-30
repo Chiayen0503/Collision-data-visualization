@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_73eb122496a48d620f6160f6cbb8ca08 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+        <div style="position: fixed; 
+             bottom: 50px; right: 50px; width: 220px; height: 160px; 
+             background-color: white; border:2px solid grey; z-index:9999; 
+             font-size:14px; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+             <p style="margin: 0 0 10px 0; font-weight: bold; font-size: 15px;">Collision Severity</p>
+             <p style="margin: 5px 0;"><span style="color: black; font-size: 18px;">●</span> Fatal</p>
+             <p style="margin: 5px 0;"><span style="color: red; font-size: 18px;">●</span> Serious</p>
+             <p style="margin: 5px 0;"><span style="color: orange; font-size: 18px;">●</span> Slight</p>
+             <hr style="margin: 10px 0; border: 1px solid #ddd;">
+             <p style="margin: 5px 0;"><span style="color: lightblue; font-size: 14px;">●</span> Sample Points</p>
+             <p style="margin: 5px 0; font-size: 11px; color: #666;">Total: 2 collisions</p>
+        </div>
+        
+    
+            <div class="folium-map" id="map_73eb122496a48d620f6160f6cbb8ca08" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_73eb122496a48d620f6160f6cbb8ca08 = L.map(
+                "map_73eb122496a48d620f6160f6cbb8ca08",
+                {
+                    center: [51.503662375, -0.248172225],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 15,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b51714fa4c69a5a8e813b137ec31da72 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b51714fa4c69a5a8e813b137ec31da72.addTo(map_73eb122496a48d620f6160f6cbb8ca08);
+        
+    
+            var poly_line_fe77f5822f736c5a8d88141dd77a1927 = L.polyline(
+                [[51.5042751, -0.2483601], [51.5037151, -0.2481932], [51.5035201, -0.2481325], [51.5031392, -0.2480031]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_73eb122496a48d620f6160f6cbb8ca08);
+        
+    
+            poly_line_fe77f5822f736c5a8d88141dd77a1927.bindTooltip(
+                `<div>
+                     Road
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9285126380f9cca3907e822275fa7bba = L.circleMarker(
+                [51.50427510000001, -0.2483601000000004],
+                {"bubblingMouseEvents": true, "color": "lightblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightblue", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_73eb122496a48d620f6160f6cbb8ca08);
+        
+    
+            circle_marker_9285126380f9cca3907e822275fa7bba.bindTooltip(
+                `<div>
+                     Sample Point 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6f9a5308331eb02b1740e4b6bb494c5a = L.circleMarker(
+                [51.5038332926286, -0.2482284252990372],
+                {"bubblingMouseEvents": true, "color": "lightblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightblue", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_73eb122496a48d620f6160f6cbb8ca08);
+        
+    
+            circle_marker_6f9a5308331eb02b1740e4b6bb494c5a.bindTooltip(
+                `<div>
+                     Sample Point 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d21fa3f4358a29be8469fef09ca4f33e = L.circleMarker(
+                [51.50339241874377, -0.24808912367233285],
+                {"bubblingMouseEvents": true, "color": "lightblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightblue", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_73eb122496a48d620f6160f6cbb8ca08);
+        
+    
+            circle_marker_d21fa3f4358a29be8469fef09ca4f33e.bindTooltip(
+                `<div>
+                     Sample Point 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_98565f41f215bd42e209037648be0a57 = L.circleMarker(
+                [51.503361, -0.248241],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_73eb122496a48d620f6160f6cbb8ca08);
+        
+    
+        var popup_f0f72b45e610196283c73eb71424cacc = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_d64e2f3011406b057558cf57e202d728 = $(`<div id="html_d64e2f3011406b057558cf57e202d728" style="width: 100.0%; height: 100.0%;">         <div style="width: 320px; font-family: Arial, sans-serif;">             <h4 style="margin: 0 0 10px 0; color: #333; border-bottom: 2px solid #ddd; padding-bottom: 5px;">                 Collision Details             </h4>             <table style="width: 100%; font-size: 13px; line-height: 1.6;">                 <tr><td style="padding: 3px 5px;"><b>Collision Index:</b></td><td style="padding: 3px 5px;">201101FH10115</td></tr>                 <tr style="background-color: #f5f5f5;"><td style="padding: 3px 5px;"><b>Date:</b></td><td style="padding: 3px 5px;">04/04/2011 at 08:55</td></tr>                 <tr><td style="padding: 3px 5px;"><b>Location:</b></td><td style="padding: 3px 5px;">(51.503361, -0.248241)</td></tr>                 <tr style="background-color: #f5f5f5;"><td style="padding: 3px 5px;"><b>Distance from road:</b></td><td style="padding: 3px 5px;">11.042 km (11042 meters)</td></tr>                 <tr><td style="padding: 3px 5px;"><b>Severity:</b></td><td style="padding: 3px 5px;"><span style="color: orange; font-weight: bold;">Slight</span></td></tr>                 <tr style="background-color: #f5f5f5;"><td style="padding: 3px 5px;"><b>Vehicles involved:</b></td><td style="padding: 3px 5px;">1</td></tr>                 <tr><td style="padding: 3px 5px;"><b>Casualties:</b></td><td style="padding: 3px 5px;">1</td></tr>                 <tr style="background-color: #f5f5f5;"><td style="padding: 3px 5px;"><b>Speed limit:</b></td><td style="padding: 3px 5px;">30 mph</td></tr>                 <tr><td style="padding: 3px 5px;"><b>Weather:</b></td><td style="padding: 3px 5px;">Fine no high winds</td></tr>                 <tr style="background-color: #f5f5f5;"><td style="padding: 3px 5px;"><b>Light:</b></td><td style="padding: 3px 5px;">Daylight</td></tr>             </table>         </div>         </div>`)[0];
+                popup_f0f72b45e610196283c73eb71424cacc.setContent(html_d64e2f3011406b057558cf57e202d728);
+            
+        
+
+        circle_marker_98565f41f215bd42e209037648be0a57.bindPopup(popup_f0f72b45e610196283c73eb71424cacc)
+        ;
+
+        
+    
+    
+            circle_marker_98565f41f215bd42e209037648be0a57.bindTooltip(
+                `<div>
+                     Slight - 04/04/2011
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_15aa141275335bea93724325771c7098 = L.circleMarker(
+                [51.503547, -0.248667],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_73eb122496a48d620f6160f6cbb8ca08);
+        
+    
+        var popup_5c86ce96661452d9b3551b04e8ba998c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_8794a18016cf6bc5c55fee1c61e60f06 = $(`<div id="html_8794a18016cf6bc5c55fee1c61e60f06" style="width: 100.0%; height: 100.0%;">         <div style="width: 320px; font-family: Arial, sans-serif;">             <h4 style="margin: 0 0 10px 0; color: #333; border-bottom: 2px solid #ddd; padding-bottom: 5px;">                 Collision Details             </h4>             <table style="width: 100%; font-size: 13px; line-height: 1.6;">                 <tr><td style="padding: 3px 5px;"><b>Collision Index:</b></td><td style="padding: 3px 5px;">201201FH10287</td></tr>                 <tr style="background-color: #f5f5f5;"><td style="padding: 3px 5px;"><b>Date:</b></td><td style="padding: 3px 5px;">22/05/2012 at 17:10</td></tr>                 <tr><td style="padding: 3px 5px;"><b>Location:</b></td><td style="padding: 3px 5px;">(51.503547, -0.248667)</td></tr>                 <tr style="background-color: #f5f5f5;"><td style="padding: 3px 5px;"><b>Distance from road:</b></td><td style="padding: 3px 5px;">35.863 km (35863 meters)</td></tr>                 <tr><td style="padding: 3px 5px;"><b>Severity:</b></td><td style="padding: 3px 5px;"><span style="color: orange; font-weight: bold;">Slight</span></td></tr>                 <tr style="background-color: #f5f5f5;"><td style="padding: 3px 5px;"><b>Vehicles involved:</b></td><td style="padding: 3px 5px;">2</td></tr>                 <tr><td style="padding: 3px 5px;"><b>Casualties:</b></td><td style="padding: 3px 5px;">1</td></tr>                 <tr style="background-color: #f5f5f5;"><td style="padding: 3px 5px;"><b>Speed limit:</b></td><td style="padding: 3px 5px;">30 mph</td></tr>                 <tr><td style="padding: 3px 5px;"><b>Weather:</b></td><td style="padding: 3px 5px;">Fine no high winds</td></tr>                 <tr style="background-color: #f5f5f5;"><td style="padding: 3px 5px;"><b>Light:</b></td><td style="padding: 3px 5px;">Daylight</td></tr>             </table>         </div>         </div>`)[0];
+                popup_5c86ce96661452d9b3551b04e8ba998c.setContent(html_8794a18016cf6bc5c55fee1c61e60f06);
+            
+        
+
+        circle_marker_15aa141275335bea93724325771c7098.bindPopup(popup_5c86ce96661452d9b3551b04e8ba998c)
+        ;
+
+        
+    
+    
+            circle_marker_15aa141275335bea93724325771c7098.bindTooltip(
+                `<div>
+                     Slight - 22/05/2012
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
