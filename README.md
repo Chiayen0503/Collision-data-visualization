@@ -2,7 +2,7 @@
 
 A Python package for analyzing traffic collisions along roads using GPS sampling and UK Department for Transport (DfT) collision data. This tool enables comprehensive analysis of collision patterns, including spatial distribution, temporal trends, and environmental factors.
 
-![Collision Visualization](images/collision_mile_end.png)
+![Collision Visualization](collision_mile_end.png)
 
 
 ## Features
